@@ -12,6 +12,7 @@
                 },
                 pukul : function(lawan){
                     this.energi = this.energi - 100;
+                    lawan.energi = lawan.energi - 100;
                     console.log(this.nama + " memukul " + lawan.nama + ". Energi sekarang: " + this.energi);
                 }
             };
@@ -24,16 +25,26 @@
                 },
                 pukul : function(lawan){
                     this.energi = this.energi - 75;
+                    lawan.energi = lawan.energi - 100;
                     console.log(this.nama + " memukul " + lawan.nama + ". Energi sekarang: " + this.energi);
                 }
             }
-            console.log("Jagoan 1 : " + jagoan1.nama + ", Energi : " + jagoan1.energi);
-            console.log("Jagoan 2 : " + jagoan2.nama + ", Energi : " + jagoan2.energi);
-            console.log("Pertarungan Dimulai...");
-            jagoan1.makan(500);
-            jagoan2.pukul(jagoan1);
-            jagoan1.pukul(jagoan2);
-            jagoan2.makan(300);
+            function run(){
+                console.log("Jagoan 1 : " + jagoan1.nama + ", Energi : " + jagoan1.energi);
+                console.log("Jagoan 2 : " + jagoan2.nama + ", Energi : " + jagoan2.energi);
+                console.log("Pertarungan Dimulai...");
+                jagoan1.makan(500);
+                jagoan2.pukul(jagoan1);
+                console.log("Jagoan 1 : " + jagoan1.nama + ", Energi : " + jagoan1.energi);
+                console.log("Jagoan 2 : " + jagoan2.nama + ", Energi : " + jagoan2.energi);
+                jagoan1.pukul(jagoan2);
+                console.log("Jagoan 1 : " + jagoan1.nama + ", Energi : " + jagoan1.energi);
+                console.log("Jagoan 2 : " + jagoan2.nama + ", Energi : " + jagoan2.energi);
+                jagoan2.makan(300);
+            }
         </script>
     </head>
+    <body>
+        <button onclick="run()">Run Program</button>
+    </body>
 </html>
